@@ -42,6 +42,14 @@ if (Meteor.isServer) {
         assert.equal(messages.length, 2);
         assert.isTrue(messages.some(msg => msg.message === message));
       });
+
+      it("can't post a message if no user is currently authenticated", () => {
+        const message = 'Another message';
+        const fn = () => mockMethodCall('messages.post', message);
+
+        assert.throw(fn, /Not authorized/);
+        assert.equal(MessagesCollection.find({}).count(), 1);
+      });
     });
   });
 }
