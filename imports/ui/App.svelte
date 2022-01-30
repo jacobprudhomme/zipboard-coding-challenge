@@ -2,6 +2,7 @@
   import { Meteor } from 'meteor/meteor';
 
   import LoginForm from './LoginForm.svelte';
+  import MessageForm from './MessageForm.svelte';
 
   Meteor.subscribe('messages');
 
@@ -18,7 +19,8 @@
   {#if !user}
     <LoginForm />
   {:else}
-    <p>You are logged in!</p>
+    <MessageForm />
+
     <button on:click={logout}>Log Out</button>
   {/if}
 </div>
