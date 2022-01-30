@@ -18,26 +18,34 @@
 </script>
 
 
-<div>
+<div class="app">
   {#if !user}
     <LoginForm />
   {:else}
-    <button class="button-clear" on:click={logout}>Log Out</button>
-
-    <MessageForm />
+    <div class="top-row">
+      <MessageForm />
+      <button class="button-clear" on:click={logout}>Log Out</button>
+    </div>
 
     <MessageBoard />
   {/if}
 </div>
 
 <style>
-  div {
+  .app {
     height: 100vh;
   }
 
+  .top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
   button {
-    position: absolute;
-    right: 0;
-    top: 0;
+    line-height: 1;
+    height: 2rem;
+
+    padding: 0;
   }
 </style>
