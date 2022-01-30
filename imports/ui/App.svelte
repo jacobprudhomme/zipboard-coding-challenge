@@ -3,6 +3,8 @@
 
   import LoginForm from './LoginForm.svelte';
 
+  Meteor.subscribe('messages');
+
   let user = null;
   $m: user = Meteor.user();
 
