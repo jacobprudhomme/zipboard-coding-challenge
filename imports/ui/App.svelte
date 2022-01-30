@@ -3,8 +3,8 @@
 
   import LoginForm from './LoginForm.svelte';
 
-  let loggedIn = false;
-  $m: loggedIn = !!Meteor.user();
+  let user = null;
+  $m: user = Meteor.user();
 
   function logout() {
     Meteor.logout();
@@ -13,7 +13,7 @@
 
 
 <div>
-  {#if !loggedIn}
+  {#if !user}
     <LoginForm />
   {:else}
     <p>You are logged in!</p>
