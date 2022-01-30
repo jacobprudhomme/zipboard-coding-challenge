@@ -14,7 +14,7 @@
   <hr />
   <p><strong>{message.poster}</strong> said...</p>
   <p>{message.message}</p>
-  <p>...on {formatDate(message.createdAt)}</p>
+  <p class="date">...on {formatDate(message.createdAt)}</p>
 </div>
 
 <style>
@@ -24,5 +24,10 @@
 
   p {
     margin: 1rem 0;
+  }
+
+  .date {
+    font-size: 1.2rem;
+    font-style: italic;
   }
 </style>
