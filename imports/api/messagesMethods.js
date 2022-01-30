@@ -13,7 +13,7 @@ Meteor.methods({
 
     MessagesCollection.insert({
       message,
-      userId: Meteor.user().username,
+      poster: Meteor.user().emails[0].address,
       createdAt: new Date(),
     });
   },

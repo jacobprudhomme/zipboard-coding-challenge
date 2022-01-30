@@ -2,7 +2,7 @@
   import { Meteor } from 'meteor/meteor';
   import { Accounts } from 'meteor/accounts-base';
 
-  let username = '';
+  let email = '';
   let password = '';
 
   let logIn = true;
@@ -17,12 +17,12 @@
   function login() {
     if (!logIn) {
       Accounts.createUser({
-        username,
+        email,
         password,
       });
     }
 
-    Meteor.loginWithPassword(username, password, (err) => {
+    Meteor.loginWithPassword(email, password, (err) => {
       errorMessage = `Error: ${err.message.slice(0, -6)}`;
     });
   }
@@ -30,13 +30,13 @@
 
 <form on:submit|preventDefault={login}>
   <div>
-    <label for="username">Username</label>
+    <label for="email">Email</label>
     <input
-      type="text"
-      placeholder="Enter username"
-      name="username"
+      type="email"
+      placeholder="Enter email"
+      name="email"
       required
-      bind:value={username}
+      bind:value={email}
     />
   </div>
 
