@@ -29,6 +29,8 @@
 <style>
   hr {
     border-color: blueviolet;
+
+    margin: 2rem 0;
   }
 
   p {
