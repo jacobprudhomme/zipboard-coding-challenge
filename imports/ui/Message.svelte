@@ -2,9 +2,9 @@
   export let message;
 
   function formatDate(when) {
-    const year = message.createdAt.getFullYear();
-    const month = message.createdAt.getMonth() + 1;
-    const day = message.createdAt.getDate();
+    const year = when.getFullYear();
+    const month = when.getMonth() + 1;
+    const day = when.getDate();
 
     return `${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`;
   }
