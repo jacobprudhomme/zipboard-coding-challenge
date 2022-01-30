@@ -37,7 +37,22 @@
     <p>{errorMessage}</p>
   {/if}
 
-  <div>
-    <button type="submit">Log In</button>
-  </div>
+  <button type="submit">Log In</button>
 </form>
+
+<style>
+  form {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    color: rgb(230, 25, 25);
+
+    margin-bottom: 1rem;
+  }
+</style>

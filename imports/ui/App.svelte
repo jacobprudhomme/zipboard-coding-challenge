@@ -1,4 +1,6 @@
 <script>
+  import 'milligram/dist/milligram.min.css';
+
   import { Meteor } from 'meteor/meteor';
 
   import LoginForm from './LoginForm.svelte';
@@ -27,3 +29,9 @@
     <button on:click={logout}>Log Out</button>
   {/if}
 </div>
+
+<style>
+  div {
+    height: 100vh;
+  }
+</style>
