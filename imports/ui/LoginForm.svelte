@@ -5,14 +5,6 @@
   let email = '';
   let password = '';
 
-  let logIn = true;
-  function toggle() {
-    logIn = !logIn;
-
-    username = '';
-    password = '';
-  }
-
   let errorMessage = null;
   function login() {
     if (!logIn) {
@@ -25,6 +17,13 @@
     Meteor.loginWithPassword(email, password, (err) => {
       errorMessage = `Error: ${err.message.slice(0, -6)}`;
     });
+  }
+
+  let logIn = true;
+  function toggle() {
+    logIn = !logIn;
+
+    errorMessage = null;
   }
 </script>
 
