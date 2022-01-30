@@ -4,7 +4,10 @@
   import Message from './Message.svelte';
 
   let messages = [];
-  $m: messages = MessagesCollection.find({}).fetch();
+  $m: messages = MessagesCollection.find(
+      {},
+      { sort: { createdAt: -1 } },
+    ).fetch();
 </script>
 
 <ul>
