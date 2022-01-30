@@ -22,16 +22,22 @@
   {#if !user}
     <LoginForm />
   {:else}
+    <button class="button-clear" on:click={logout}>Log Out</button>
+
     <MessageForm />
 
     <MessageBoard />
-
-    <button on:click={logout}>Log Out</button>
   {/if}
 </div>
 
 <style>
   div {
     height: 100vh;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 </style>

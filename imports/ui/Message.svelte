@@ -11,7 +11,18 @@
 </script>
 
 <div>
-  <p>{message.userId}</p>
+  <hr />
+  <p><strong>{message.userId}</strong> said...</p>
   <p>{message.message}</p>
-  <p>Posted on {formatDate(message.createdAt)}</p>
+  <p>...on {formatDate(message.createdAt)}</p>
 </div>
+
+<style>
+  hr {
+    border-color: blueviolet;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+</style>
