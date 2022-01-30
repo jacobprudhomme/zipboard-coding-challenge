@@ -18,3 +18,9 @@
   />
   <button type="submit">Post Message</button>
 </form>
+
+<style>
+  form {
+    margin-bottom: 0;
+  }
+</style>
