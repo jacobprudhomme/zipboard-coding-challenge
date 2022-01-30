@@ -12,7 +12,7 @@
 
 <div>
   <hr />
-  <p><strong>{message.userId}</strong> said...</p>
+  <p><strong>{message.poster}</strong> said...</p>
   <p>{message.message}</p>
   <p>...on {formatDate(message.createdAt)}</p>
 </div>
