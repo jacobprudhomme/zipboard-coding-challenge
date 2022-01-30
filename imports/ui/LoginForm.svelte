@@ -1,9 +1,27 @@
 <script>
+  import { Meteor } from 'meteor/meteor';
+  import { Accounts } from 'meteor/accounts-base';
+
   let username = '';
   let password = '';
 
+  let logIn = true;
+  function toggle() {
+    logIn = !logIn;
+
+    username = '';
+    password = '';
+  }
+
   let errorMessage = null;
   function login() {
+    if (!logIn) {
+      Accounts.createUser({
+        username,
+        password,
+      });
+    }
+
     Meteor.loginWithPassword(username, password, (err) => {
       errorMessage = `Error: ${err.message.slice(0, -6)}`;
     });
@@ -37,7 +55,13 @@
     <p>{errorMessage}</p>
   {/if}
 
-  <button type="submit">Log In</button>
+  {#if logIn}
+    <button type="submit">Log In</button>
+    <button class="button-clear" on:click={toggle}>Or create a new account</button>
+  {:else}
+    <button type="submit">Create Account</button>
+    <button class="button-clear" on:click={toggle}>Or log in</button>
+  {/if}
 </form>
 
 <style>
